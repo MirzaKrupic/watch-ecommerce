@@ -121,22 +121,65 @@
                             <div class="login_part_form_iner">
                                 <h3>Welcome ! <br>
                                     Please Register now</h3>
-                                <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                                <form class="row contact_form" action="{{ route('register') }}" method="post" novalidate="novalidate">
+                                    @csrf
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="name" name="name" value=""
-                                            placeholder="Username">
+                                        <input class="form-control @error('name')
+                                        border border-danger @enderror" type="text" name="name" id="name" placeholder="Your name" value="{{ old('name') }}">
+
+                                        @error('name')
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="password" class="form-control" id="password" name="password" value=""
-                                            placeholder="Password">
+                                        <input class="form-control @error('username')
+                                        border border-danger @enderror" type="text" name="username" id="username" placeholder="Your username" value="{{ old('username') }}">
+
+                                        @error('username')
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-12 form-group p_star">
+                                        <input class="form-control @error('email')
+                                        border border-danger @enderror" type="text" name="email" id="email" placeholder="Your email" value="{{ old('email') }}">
+
+                                        @error('email')
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-12 form-group p_star">
+                                        <input class="form-control @error('password')
+                                        border border-danger @enderror" type="password" name="password" id="password" placeholder="Your password" value="">
+
+                                        @error('password')
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-12 form-group p_star">
+                                        <input class="form-control @error('password_confirmation')
+                                        border border-danger @enderror" type="password" name="password_confirmation" id="password_confirmation" placeholder="Repeat your password" value="">
+
+                                        @error('password_confirmation')
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <div class="col-md-12 form-group">
                                         <div class="creat_account d-flex align-items-center">
                                             <input type="checkbox" id="f-option" name="selector">
                                             <label for="f-option">Remember me</label>
                                         </div>
-                                        <button type="submit" value="submit" class="btn_3">
-                                            log in
+                                        <button type="submit" class="btn_3">
+                                            Register
                                         </button>
                                         <a class="lost_pass" href="#">forget password?</a>
                                     </div>
