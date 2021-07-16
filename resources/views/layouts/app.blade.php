@@ -88,6 +88,14 @@
                                 </li>
                                 <li> <a href="{{ route('login') }}"><span class="flaticon-user"></span></a></li>
                                 <li><a href="cart.html"><span class="flaticon-shopping-cart"></span></a> </li>
+                                @auth
+                                    <li>
+                                        <form action="{{ route('logout') }}" method="post">
+                                            @csrf
+                                            <button type="submit" class="btn-primary">Log out</button>
+                                        </form>
+                                    </li>
+                                @endauth
                             </ul>
                         </div>
                     </div>
