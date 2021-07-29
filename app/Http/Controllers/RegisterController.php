@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Registration;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class RegisterController extends Controller
 {
@@ -30,7 +32,7 @@ class RegisterController extends Controller
 
         
         //store user
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'username' => $request->username,
             'email' => $request->email,
@@ -39,6 +41,8 @@ class RegisterController extends Controller
         
         //sign the user in
         //Auth::attempt($request->only('email', 'password'));
+
+        Mail::to($user)->send(new Registration($user));
 
         //redirect
         return redirect()->route('index');
