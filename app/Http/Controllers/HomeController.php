@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Watch;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // $watches = Watch::all();
+        // return view('home', [
+        //     'watches' => $watches
+        // ]);
+
         return view('index');
     }
 }
