@@ -24,11 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $watches = Watch::all();
+        $watches = Watch::all();
         // return view('home', [
         //     'watches' => $watches
         // ]);
 
-        return view('index');
+        return view('index', [
+            'watches'=>$watches
+        ]);
     }
 }

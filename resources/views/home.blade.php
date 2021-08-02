@@ -5,7 +5,7 @@
         <div class="w-8/12 bg-white p-6 rounded-lg">
             @if ($watches->count())
                 @foreach ($watches as $watch)
-                    <x-post :watch="$watch" />
+                    <x-watch :watch="$watch" />
                 @endforeach
 
             @else
