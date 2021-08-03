@@ -44,13 +44,13 @@
                     <div class="menu-wrapper">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html"><img src="{{ asset('img/logo/logo.png') }}" alt=""></a>
+                            <a href="{{ route('home') }}"><img src="{{ asset('img/logo/logo.png') }}" alt=""></a>
                         </div>
                         <!-- Main-menu -->
                         <div class="main-menu d-none d-lg-block">
                             <nav>                                                
                                 <ul id="navigation">  
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="{{ route('home') }}">Home</a></li>
                                     <li><a href="shop.html">shop</a></li>
                                     <li><a href="about.html">about</a></li>
                                     <li class="hot"><a href="#">Latest</a>
