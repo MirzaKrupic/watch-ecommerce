@@ -87,7 +87,7 @@
                                     </div>
                                 </li>
                                 <li> <a href="{{ route('login') }}"><span class="flaticon-user"></span></a></li>
-                                <li><a href="cart.html"><span class="flaticon-shopping-cart"></span></a> </li>
+                                <li><a href="{{ route('cart') }}"><span class="flaticon-shopping-cart"></span></a> </li>
                                 @auth
                                     <li>
                                         <form action="{{ route('logout') }}" method="post">

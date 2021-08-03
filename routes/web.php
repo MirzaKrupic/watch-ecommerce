@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
@@ -22,6 +23,7 @@ Route::redirect('/', '/home', 301);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
