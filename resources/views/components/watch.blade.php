@@ -5,7 +5,7 @@
         <div class="popular-img">
             <img src="{{ $watch->image_url }}" alt="">
             <div class="img-cap">
-                <span>Add to cart</span>
+                <a href="{{ route('watch.addToCart', ['id' => $watch->id]) }}"><span>Add to cart</span></a>
             </div>
             <div class="favorit-items">
                 <span class="flaticon-heart"></span>
