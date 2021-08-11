@@ -12,12 +12,12 @@
       </div>
     </td>
     <td>
-      <h5>${{ $watch['price'] }}</h5>
+      <h5>${{ $watch['item']['price'] }}</h5>
     </td>
     <td>
       <h5>{{ $watch['qty'] }}</h5>
     </td>
     <td>
-      <h5>${{ $watch['price'] * $watch['qty']  }}</h5>
+      <h5>${{ $watch['item']['price'] * $watch['qty']  }}</h5>
     </td>
 </tr>
