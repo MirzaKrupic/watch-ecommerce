@@ -31,9 +31,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <x-cart-item />
-                  <x-cart-item />
-                  <x-cart-item />
+                    @if ($products)
+                        @foreach ($products as $watch)
+                            <x-cart-item :watch="$watch" />
+                        @endforeach
+                    @else
+                        <p>There are no watches</p>
+                    @endif
                   <tr>
                     <td></td>
                     <td></td>
@@ -41,7 +45,7 @@
                       <h5>Subtotal</h5>
                     </td>
                     <td>
-                      <h5>$2160.00</h5>
+                        <h5>${{ $totalPrice }}</h5>
                     </td>
                   </tr>
                 </tbody>
